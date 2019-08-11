@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ef1ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ef1ad.dir/build.make CMakeFiles/cmTC_ef1ad.dir/build
+make[1]: Entering directory '/home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ef1ad.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_ef1ad.dir/CheckSymbolExists.c.o   -c /home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_ef1ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef1ad.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_ef1ad.dir/CheckSymbolExists.c.o  -o cmTC_ef1ad 
+CMakeFiles/cmTC_ef1ad.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ef1ad.dir/build.make:97: recipe for target 'cmTC_ef1ad' failed
+make[1]: *** [cmTC_ef1ad] Error 1
+make[1]: Leaving directory '/home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ef1ad/fast' failed
+make: *** [cmTC_ef1ad/fast] Error 2
+
+File /home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_729b7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_729b7.dir/build.make CMakeFiles/cmTC_729b7.dir/build
+make[1]: Entering directory '/home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_729b7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_729b7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_729b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_729b7.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_729b7.dir/CheckFunctionExists.c.o  -o cmTC_729b7 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_729b7.dir/build.make:97: recipe for target 'cmTC_729b7' failed
+make[1]: *** [cmTC_729b7] Error 1
+make[1]: Leaving directory '/home/wangyuanqi/code/code/cuda_guided_filter/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_729b7/fast' failed
+make: *** [cmTC_729b7/fast] Error 2
+
+
